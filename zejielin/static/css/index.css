@@ -1,0 +1,86 @@
+#app {
+  width: 100%;
+}
+
+nav {
+  width: calc(100% - 120px);
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+nav .left {
+  width: 40%;
+}
+nav .right {
+  width: 60%;
+  display: flex;
+  justify-content: right;
+}
+nav .right:last-child {
+  margin-right: 0;
+}
+nav a {
+  margin-right: 20px;
+}
+
+header {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+header > .DynamicCarouselGraph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+header > .DynamicCarouselGraph:first-child {
+  opacity: 1;
+}
+header > .DynamicCarouselGraph img {
+  width: 100%;
+}
+
+main {
+  width: calc(100% - 90px);
+  height: 600px;
+  padding: 10px 45px;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  width: 1400px;
+  min-height: 300px;
+  background-color: peachpuff;
+  display: flex;
+  justify-content: space-between;
+}
+.main .left {
+  width: 68%;
+  background-color: white;
+}
+.main .right {
+  width: 31%;
+  height: 45px;
+  background-color: powderblue;
+}
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: darkgray;
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load my_tag %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<link rel="stylesheet" href="/static/css/reset.css">
+<link rel="stylesheet" href="/static/css/index.css">
+<script type="text/javascript" src="/static/vue/vue.js"></script>
+<body>
+<div id="app">
+<nav>
+    <div class="left">
+        <a href="">logo</a>
+    </div>
+    <div class="right ">
+        <a href="">新闻</a>
+        <a href="">心情</a>
+        <a href="">关于</a>
+        <a href="">登录</a>
+    </div>
+</nav>
+
+{#单引号这里连接数据库，获取信息#}
+{% banner 'index' %}
+<main>
+    {% block main %}
+        <div class="main">
+            <div class="left">
+                <div class="card">
+
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+    {% endblock %}
+</main>
+<footer>底部栏</footer>
+</div>
+<script>
+    //轮播图
+    new Vue({el:'#app'})
+    let menu_img=document.querySelectorAll('.DynamicCarouselGraph')
+    let menu_length = menu_img.length
+    let index = 0
+    let timer = null;
+    clearInterval(timer)
+    timer = setInterval(()=>{
+        index++
+        if(index === menu_length){
+            index = 0
+        }
+     for(let i of menu_img){
+        i.style.opacity = 0
+    }
+        menu_img[index].style.opacity = 1
+    },2000)
+</script>
+</body>
+</html>
